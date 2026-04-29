@@ -205,6 +205,15 @@ nav a:hover::after {
   text-transform: uppercase;
 }
 
+.section-index {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 h1,
 h2,
 h3,
@@ -550,6 +559,12 @@ h3 {
   color: var(--white);
 }
 
+.stats-ribbon .section-index,
+.lab .section-index,
+.contact .section-index {
+  color: rgba(255, 255, 255, 0.48);
+}
+
 .stats-ribbon .eyebrow {
   color: #9FD1ED;
 }
@@ -599,6 +614,7 @@ h3 {
 
 .section {
   padding: clamp(56px, 7.5vw, 92px) clamp(18px, 5vw, 76px);
+  position: relative;
 }
 
 .intro,
@@ -610,6 +626,20 @@ h3 {
   grid-template-columns: minmax(260px, 0.82fr) minmax(300px, 1.18fr);
   gap: clamp(28px, 6vw, 84px);
   align-items: start;
+}
+
+.intro::after,
+.direction::after,
+.outcomes::after {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 5vw, 76px);
+  top: 52px;
+  width: min(22vw, 220px);
+  height: min(22vw, 220px);
+  border: 1px solid rgba(95, 168, 211, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .intro > p,
@@ -641,6 +671,14 @@ h3 {
 .visual-story article:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
+}
+
+.visual-story article:nth-child(2) {
+  transform: translateY(28px);
+}
+
+.visual-story article:nth-child(2):hover {
+  transform: translateY(20px);
 }
 
 .visual-story img {
@@ -686,11 +724,13 @@ h3 {
 
 .pillar-card {
   padding: 26px;
-  transition: transform 180ms ease;
+  min-height: 260px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .pillar-card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .line-icon {
@@ -763,12 +803,28 @@ h3 {
 .service-card {
   overflow: hidden;
   min-height: 392px;
+  position: relative;
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 22px 18px 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
 }
 
 .service-card img {
@@ -794,8 +850,31 @@ h3 {
 }
 
 .lab {
-  background: var(--ink);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 14%, rgba(249, 115, 22, 0.12), transparent 22rem),
+    radial-gradient(circle at 84% 22%, rgba(95, 168, 211, 0.18), transparent 24rem),
+    var(--ink);
   color: var(--white);
+}
+
+.lab::before {
+  content: "LIQUID GENIUS";
+  position: absolute;
+  left: clamp(18px, 5vw, 76px);
+  bottom: -0.14em;
+  color: rgba(255, 255, 255, 0.045);
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: clamp(4rem, 15vw, 13rem);
+  font-weight: 800;
+  line-height: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lab > * {
+  position: relative;
+  z-index: 1;
 }
 
 .lab .eyebrow {
@@ -816,6 +895,11 @@ h3 {
   padding: 24px;
   color: var(--ink);
   overflow: hidden;
+  transition: transform 180ms ease;
+}
+
+.lab-card:hover {
+  transform: translateX(6px);
 }
 
 .lab-card::after {
@@ -890,6 +974,27 @@ h3 {
   line-height: 1.58;
 }
 
+.approach {
+  overflow: hidden;
+}
+
+.approach::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(95, 168, 211, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(95, 168, 211, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, transparent, black 26%, transparent 90%);
+  pointer-events: none;
+}
+
+.approach > * {
+  position: relative;
+  z-index: 1;
+}
+
 .lab-card span {
   margin-bottom: 18px;
   color: var(--orange);
@@ -920,6 +1025,12 @@ h3 {
   position: relative;
   padding: 24px 24px 24px 86px;
   counter-increment: steps;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.timeline li:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow);
 }
 
 .timeline li::before {
@@ -980,6 +1091,15 @@ h3 {
   background:
     radial-gradient(circle at 80% 14%, rgba(95, 168, 211, 0.18), transparent 24rem),
     var(--ink);
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  pointer-events: none;
 }
 
 .contact .eyebrow {
@@ -1136,6 +1256,11 @@ textarea:focus {
   .pillar-grid,
   .direction-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual-story article:nth-child(2),
+  .visual-story article:nth-child(2):hover {
+    transform: none;
   }
 
   .stat-grid {
