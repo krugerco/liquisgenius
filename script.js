@@ -1,4 +1,4 @@
-const revealTargets = document.querySelectorAll(".section, .proof-band, .pillar-card, .service-card, .timeline li, .metric-list div");
+const revealTargets = document.querySelectorAll(".section, .proof-band, .visual-story article, .pillar-card, .service-card, .lab-card, .timeline li, .metric-list div");
 
 revealTargets.forEach((target) => target.classList.add("reveal"));
 

@@ -1,0 +1,20 @@
+<svg width="900" height="680" viewBox="0 0 900 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Custom AI build illustration</title>
+  <desc id="desc">A custom business automation interface with reusable modules.</desc>
+  <rect width="900" height="680" rx="34" fill="#1F2937"/>
+  <circle cx="156" cy="132" r="74" fill="#5FA8D3" fill-opacity=".22"/>
+  <circle cx="739" cy="526" r="112" fill="#F97316" fill-opacity=".18"/>
+  <rect x="130" y="114" width="640" height="452" rx="24" fill="#fff"/>
+  <rect x="165" y="154" width="570" height="66" rx="14" fill="#F3F4F6"/>
+  <circle cx="200" cy="187" r="11" fill="#F97316"/>
+  <circle cx="232" cy="187" r="11" fill="#5FA8D3"/>
+  <circle cx="264" cy="187" r="11" fill="#1F2937"/>
+  <rect x="165" y="260" width="160" height="230" rx="18" fill="#EAF6FC"/>
+  <rect x="370" y="260" width="160" height="230" rx="18" fill="#FFF7ED"/>
+  <rect x="575" y="260" width="160" height="230" rx="18" fill="#F3F4F6"/>
+  <path d="M222 317h46M205 356h80M205 395h61M427 317h46M410 356h80M410 395h61M632 317h46M615 356h80M615 395h61" stroke="#1F2937" stroke-opacity=".7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M326 375h43M531 375h43" stroke="#5FA8D3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M353 349l26 26-26 26M558 349l26 26-26 26" stroke="#5FA8D3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M418 531h64" stroke="#F97316" stroke-width="13" stroke-linecap="round"/>
+  <path d="M450 499v64" stroke="#F97316" stroke-width="13" stroke-linecap="round"/>
+</svg>

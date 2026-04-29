@@ -1,0 +1,19 @@
+<svg width="900" height="680" viewBox="0 0 900 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow map illustration</title>
+  <desc id="desc">Connected workflow cards showing how AI improves business processes.</desc>
+  <rect width="900" height="680" rx="34" fill="#FFFFFF"/>
+  <path d="M80 130h740v420H80V130Z" fill="#F3F4F6"/>
+  <path d="M206 252h200M493 252h200M450 328v88M289 416h322" stroke="#5FA8D3" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 22"/>
+  <rect x="94" y="181" width="213" height="142" rx="18" fill="#fff" stroke="#D8DEE7" stroke-width="3"/>
+  <rect x="344" y="181" width="213" height="142" rx="18" fill="#fff" stroke="#D8DEE7" stroke-width="3"/>
+  <rect x="594" y="181" width="213" height="142" rx="18" fill="#fff" stroke="#D8DEE7" stroke-width="3"/>
+  <rect x="219" y="381" width="213" height="142" rx="18" fill="#fff" stroke="#D8DEE7" stroke-width="3"/>
+  <rect x="469" y="381" width="213" height="142" rx="18" fill="#fff" stroke="#D8DEE7" stroke-width="3"/>
+  <circle cx="143" cy="230" r="22" fill="#F97316"/>
+  <circle cx="393" cy="230" r="22" fill="#5FA8D3"/>
+  <circle cx="643" cy="230" r="22" fill="#1F2937"/>
+  <circle cx="268" cy="430" r="22" fill="#5FA8D3"/>
+  <circle cx="518" cy="430" r="22" fill="#F97316"/>
+  <path d="M181 222h77M181 260h82M431 222h77M431 260h67M681 222h77M681 260h59M306 422h77M306 460h56M556 422h77M556 460h68" stroke="#1F2937" stroke-opacity=".72" stroke-width="12" stroke-linecap="round"/>
+  <path d="M174 612c71-45.7 160.7-67.7 269-66 108.3 1.7 203 23.7 284 66" stroke="#F97316" stroke-width="12" stroke-linecap="round"/>
+</svg>
