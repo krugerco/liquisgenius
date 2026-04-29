@@ -63,3 +63,46 @@ if (contactForm && formStatus) {
     }
   });
 }
+
+const counters = document.querySelectorAll("[data-counter]");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const animateCounter = (counter) => {
+  const target = Number(counter.dataset.counter || 0);
+
+  if (prefersReducedMotion) {
+    counter.textContent = target;
+    return;
+  }
+
+  const duration = 1200;
+  const start = performance.now();
+
+  const tick = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    counter.textContent = Math.round(target * eased);
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    }
+  };
+
+  requestAnimationFrame(tick);
+};
+
+if (counters.length) {
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => counterObserver.observe(counter));
+}
