@@ -17,9 +17,26 @@ const revealObserver = new IntersectionObserver(
 revealTargets.forEach((target) => revealObserver.observe(target));
 
 const header = document.querySelector(".site-header");
+const scrollProgress = document.querySelector(".scroll-progress");
 
 window.addEventListener("scroll", () => {
   header.toggleAttribute("data-scrolled", window.scrollY > 18);
+
+  if (scrollProgress) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+    scrollProgress.style.width = `${progress}%`;
+  }
+});
+
+document.querySelectorAll(".service-card").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--mx", `${x}%`);
+    card.style.setProperty("--my", `${y}%`);
+  });
 });
 
 const contactForm = document.querySelector("[data-contact-form]");
