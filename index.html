@@ -247,7 +247,7 @@
         <h2>Tell us what is slowing your business down.</h2>
         <p>Share the workflow, team challenge, or custom project you have in mind. We will help you find the simplest AI path that creates real savings.</p>
       </div>
-      <form class="contact-form" action="mailto:hello@liquidgenius.ai" method="post" enctype="text/plain">
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form>
         <label>
           Name
           <input type="text" name="name" autocomplete="name" required>
@@ -257,10 +257,19 @@
           <input type="email" name="email" autocomplete="email" required>
         </label>
         <label>
+          Company
+          <input type="text" name="company" autocomplete="organization">
+        </label>
+        <label class="form-trap" aria-hidden="true">
+          Website
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <label>
           What would you like AI to improve?
           <textarea name="message" rows="5" required></textarea>
         </label>
         <button class="button primary" type="submit">Send Inquiry</button>
+        <p class="form-status" data-form-status role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
